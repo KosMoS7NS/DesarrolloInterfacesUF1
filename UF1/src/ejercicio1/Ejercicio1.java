@@ -3,10 +3,20 @@ package ejercicio1;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import javax.swing.JButton;
+import javax.swing.JRadioButton;
+import javax.swing.JCheckBox;
+import javax.swing.JTextField;
 
 public class Ejercicio1 {
 
 	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
 
 	/**
 	 * Launch the application.
@@ -36,8 +46,63 @@ public class Ejercicio1 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 450, 350);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblLogo = new JLabel("");
+		lblLogo.setIcon(new ImageIcon("D:\\GitHub\\DesarrolloInterfacesUF1\\UF1\\src\\ejercicio1\\resources\\LogoMakr.png"));
+		lblLogo.setBounds(264, 11, 160, 194);
+		frame.getContentPane().add(lblLogo);
+		
+		JLabel lblNombre = new JLabel("Nombre");
+		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNombre.setBounds(25, 28, 60, 21);
+		frame.getContentPane().add(lblNombre);
+		
+		JLabel lbl1Apellido = new JLabel("1er apellido");
+		lbl1Apellido.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lbl1Apellido.setBounds(25, 72, 71, 21);
+		frame.getContentPane().add(lbl1Apellido);
+		
+		JLabel lbl2Apellido = new JLabel("2do apellido");
+		lbl2Apellido.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lbl2Apellido.setBounds(25, 116, 71, 21);
+		frame.getContentPane().add(lbl2Apellido);
+		
+		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnAceptar.setBounds(299, 228, 89, 23);
+		frame.getContentPane().add(btnAceptar);
+		
+		JRadioButton rdbtn1Curso = new JRadioButton("1er Curso");
+		rdbtn1Curso.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		rdbtn1Curso.setBounds(25, 194, 109, 23);
+		frame.getContentPane().add(rdbtn1Curso);
+		
+		JRadioButton rdbtn2Curso = new JRadioButton("2do Curso");
+		rdbtn2Curso.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		rdbtn2Curso.setBounds(25, 228, 109, 23);
+		frame.getContentPane().add(rdbtn2Curso);
+		
+		JCheckBox chckbxRepetidor = new JCheckBox("Repetidor");
+		chckbxRepetidor.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		chckbxRepetidor.setBounds(147, 228, 97, 23);
+		frame.getContentPane().add(chckbxRepetidor);
+		
+		textField = new JTextField();
+		textField.setBounds(111, 29, 133, 20);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(111, 73, 133, 20);
+		frame.getContentPane().add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(111, 117, 133, 20);
+		frame.getContentPane().add(textField_2);
 	}
-
 }
