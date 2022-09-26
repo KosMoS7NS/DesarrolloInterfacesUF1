@@ -15,6 +15,8 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 
 public class Ejercicio2 {
 
@@ -23,6 +25,7 @@ public class Ejercicio2 {
 	private JRadioButton rdbtnBueno;
 	private JRadioButton rdbtnAlgunDesperfecto;
 	private JButton btnAceptar;
+	private JLabel lblKm;
 	
 	/**
 	 * Launch the application.
@@ -67,19 +70,6 @@ public class Ejercicio2 {
 		comboBox.setBounds(170, 24, 113, 22);
 		frame.getContentPane().add(comboBox);
 		
-		JSlider slider = new JSlider();
-		slider.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		slider.setMajorTickSpacing(5000);
-		slider.setPaintLabels(true);
-		slider.setSnapToTicks(true);
-		slider.setPaintTicks(true);
-		slider.setBorder(null);
-		slider.setMinorTickSpacing(5000);
-		slider.setMaximum(50000);
-		slider.setValue(25000);
-		slider.setBounds(40, 220, 433, 37);
-		frame.getContentPane().add(slider);
-		
 		rdbtnComoNuevo = new JRadioButton("Como nuevo");
 		rdbtnComoNuevo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -113,10 +103,10 @@ public class Ejercicio2 {
 		rdbtnAlgunDesperfecto.setBounds(40, 126, 194, 23);
 		frame.getContentPane().add(rdbtnAlgunDesperfecto);
 		
-		JLabel lblNewLabel = new JLabel("Kilometros: ");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel.setBounds(54, 182, 109, 14);
-		frame.getContentPane().add(lblNewLabel);
+		JLabel lblKilometros = new JLabel("Kilometros:");
+		lblKilometros.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblKilometros.setBounds(54, 182, 194, 14);
+		frame.getContentPane().add(lblKilometros);
 		
 		btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
@@ -133,9 +123,27 @@ public class Ejercicio2 {
 		btnAceptar.setBounds(384, 345, 89, 23);
 		frame.getContentPane().add(btnAceptar);
 		
-		JLabel lblNewLabel_1 = new JLabel("KM: ");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel_1.setBounds(237, 293, 46, 14);
-		frame.getContentPane().add(lblNewLabel_1);
+		lblKm = new JLabel("KM: ");
+		lblKm.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblKm.setBounds(237, 293, 113, 14);
+		frame.getContentPane().add(lblKm);
+		
+		JSlider slider = new JSlider();
+		slider.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent e) {
+				lblKm.setText("KM: " + String.valueOf(slider.getValue()));
+			}
+		});
+		slider.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		slider.setMajorTickSpacing(5000);
+		slider.setPaintLabels(true);
+		slider.setSnapToTicks(true);
+		slider.setPaintTicks(true);
+		slider.setBorder(null);
+		slider.setMinorTickSpacing(5000);
+		slider.setMaximum(50000);
+		slider.setValue(25000);
+		slider.setBounds(40, 220, 433, 37);
+		frame.getContentPane().add(slider);
 	}
 }
