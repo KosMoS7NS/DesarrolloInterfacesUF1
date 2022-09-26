@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Ejercicio1 {
 
@@ -17,6 +19,12 @@ public class Ejercicio1 {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	private JRadioButton rdbtn1Curso;
+	private JRadioButton rdbtn2Curso;
+	private JCheckBox chckbxRepetidor;
+	private JButton btnAceptar;
+
+
 
 	/**
 	 * Launch the application.
@@ -70,22 +78,44 @@ public class Ejercicio1 {
 		lbl2Apellido.setBounds(25, 116, 71, 21);
 		frame.getContentPane().add(lbl2Apellido);
 		
-		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText("");
+				textField_1.setText("");
+				textField_2.setText("");
+				rdbtn1Curso.setEnabled(true);
+				rdbtn2Curso.setEnabled(true);
+				rdbtn1Curso.setSelected(false);
+				rdbtn2Curso.setSelected(false);
+				chckbxRepetidor.setSelected(false);
+			}
+		});
 		btnAceptar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnAceptar.setBounds(299, 228, 89, 23);
 		frame.getContentPane().add(btnAceptar);
 		
-		JRadioButton rdbtn1Curso = new JRadioButton("1er Curso");
+		rdbtn1Curso = new JRadioButton("1er Curso");
+		rdbtn1Curso.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rdbtn2Curso.setEnabled(false);
+			}
+		});
 		rdbtn1Curso.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		rdbtn1Curso.setBounds(25, 194, 109, 23);
 		frame.getContentPane().add(rdbtn1Curso);
 		
-		JRadioButton rdbtn2Curso = new JRadioButton("2do Curso");
+		rdbtn2Curso = new JRadioButton("2do Curso");
+		rdbtn2Curso.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rdbtn1Curso.setEnabled(false);
+			}
+		});
 		rdbtn2Curso.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		rdbtn2Curso.setBounds(25, 228, 109, 23);
 		frame.getContentPane().add(rdbtn2Curso);
 		
-		JCheckBox chckbxRepetidor = new JCheckBox("Repetidor");
+		chckbxRepetidor = new JCheckBox("Repetidor");
 		chckbxRepetidor.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		chckbxRepetidor.setBounds(147, 228, 97, 23);
 		frame.getContentPane().add(chckbxRepetidor);
