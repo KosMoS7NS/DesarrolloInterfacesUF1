@@ -147,8 +147,5 @@ public class Ejercicio2 {
 		slider.setBounds(40, 220, 433, 37);
 		frame.getContentPane().add(slider);
 	}
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-
+	
 }
