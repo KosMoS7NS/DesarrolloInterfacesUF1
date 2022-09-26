@@ -22,8 +22,8 @@ public class Ejercicio2 {
 	private JRadioButton rdbtnComoNuevo;
 	private JRadioButton rdbtnBueno;
 	private JRadioButton rdbtnAlgunDesperfecto;
-	private JButton btnNewButton;
-
+	private JButton btnAceptar;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -118,10 +118,20 @@ public class Ejercicio2 {
 		lblNewLabel.setBounds(54, 182, 109, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
-		btnNewButton = new JButton("Aceptar");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton.setBounds(384, 345, 89, 23);
-		frame.getContentPane().add(btnNewButton);
+		btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rdbtnComoNuevo.setEnabled(true);
+				rdbtnBueno.setEnabled(true);
+				rdbtnAlgunDesperfecto.setEnabled(true);
+				rdbtnComoNuevo.setSelected(false);
+				rdbtnBueno.setSelected(false);
+				rdbtnAlgunDesperfecto.setSelected(false);
+			}
+		});
+		btnAceptar.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnAceptar.setBounds(384, 345, 89, 23);
+		frame.getContentPane().add(btnAceptar);
 		
 		JLabel lblNewLabel_1 = new JLabel("KM: ");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
