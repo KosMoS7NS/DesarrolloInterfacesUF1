@@ -51,7 +51,7 @@ public class Ejercicio1 {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblLogo = new JLabel("");
-		lblLogo.setIcon(new ImageIcon("D:\\GitHub\\DesarrolloInterfacesUF1\\UF1\\src\\ejercicio1\\resources\\LogoMakr.png"));
+		lblLogo.setIcon(new ImageIcon(Ejercicio1.class.getResource("/resources/LogoMakr.png")));
 		lblLogo.setBounds(264, 11, 160, 194);
 		frame.getContentPane().add(lblLogo);
 		
