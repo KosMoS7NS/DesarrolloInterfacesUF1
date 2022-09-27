@@ -78,6 +78,7 @@ public class Ejercicio3 {
 		frame.getContentPane().add(lblResultado);
 
 		textFieldResultado = new JTextField();
+		textFieldResultado.setEditable(false);
 		textFieldResultado.setColumns(10);
 		textFieldResultado.setBounds(81, 151, 86, 20);
 		frame.getContentPane().add(textFieldResultado);
