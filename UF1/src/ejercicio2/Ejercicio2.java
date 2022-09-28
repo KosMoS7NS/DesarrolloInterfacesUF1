@@ -3,7 +3,6 @@ package ejercicio2;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JComboBox;
@@ -11,8 +10,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JSlider;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.event.ChangeListener;
